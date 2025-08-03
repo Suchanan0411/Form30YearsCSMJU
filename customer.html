@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>สั่งซื้อของที่ระลึก 30 ปี</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/customer.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  
+</head>
+<body>
+
+  <div class="container">
+    <img src="https://www.cs.mju.ac.th/assets/logo.aa2240c2.png" alt="CS MJU Logo" class="logo">
+    <h1>สั่งซื้อของที่ระลึก 30 ปี วิทยาการคอมพิวเตอร์</h1>
+
+    <form id="orderForm">
+      <div class="form-group">
+        <label for="firstName">ชื่อ</label>
+        <input type="text" id="firstName" name="firstName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">นามสกุล</label>
+        <input type="text" id="lastName" name="lastName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="address">ที่อยู่</label>
+        <input type="text" id="address" name="address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">หมายเลขโทรศัพท์</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+
+      <!-- ตัวอย่างสินค้า -->
+      <div class="product-preview">
+        <h2>ตัวอย่างสินค้า</h2>
+        <div class="product-grid">
+          <div class="product-item">
+            <img src="https://scontent.fbkk4-1.fna.fbcdn.net/v/t39.30808-6/522624981_737045899081213_6789078957936994482_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeF2hRGo5c5yIgskJis73Z2y8JsEcjB7wRvwmwRyMHvBGx-Uo2IKKIfycLPinHW_USWA8h_py7qbAQnl3_7eAStI&_nc_ohc=oAHDiL3zT7cQ7kNvwGqjiTN&_nc_oc=AdkDuVzJTA2W9Q4Es_oO2YUexF3tsqnixTHpqd_j1liImEkhMDdnk3va0-2DMQ8QyaA&_nc_zt=23&_nc_ht=scontent.fbkk4-1.fna&_nc_gid=Dq-cuKSMuBszuIIFrkWQYQ&oh=00_AfS_TzxGfg2rBSr745DCbpSiem7KEflaqUzUEV7ZXSPbKQ&oe=6894F5CD" alt="เสื้อ">
+            <p>เสื้อ 30 ปี</p>
+          </div>
+          <div class="product-item">
+            <img src="https://scontent.fbkk4-1.fna.fbcdn.net/v/t39.30808-6/493005268_1301755201474899_6244571522193418191_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEVe8nDBZxMFCWaBCgUOf0LJn65A8wpqComfrkDzCmoKoZcT4DBhIIgVit7i6rQiOv2xtvWOHiSOCkjrlIu3dQq&_nc_ohc=xMGHv1dG1RwQ7kNvwHzGy9e&_nc_oc=AdkIXESvWCiCvvlmVxjMSy-IAqq-KvSJyrPkULEyCrzQih9Qez4SrDf8n_zXbGaIxWM&_nc_zt=23&_nc_ht=scontent.fbkk4-1.fna&_nc_gid=9pFug5D0O_mQlyrbNS7skw&oh=00_AfQiNy78wyr6iuqlclMdDshuCRzZlXGPLUDYLhhAoPmHWw&oe=68950A29" alt="กระเป๋า">
+            <p>กระเป๋า</p>
+          </div>
+          <div class="product-item">
+            <img src="https://image.makewebeasy.net/makeweb/0/aSAKumEHs/Coffeecup/EQ_HU_0415_9.jpg" alt="แก้ว紀念">
+            <p>แก้ว</p>
+          </div>
+          <div class="product-item">
+            <img src="https://inwfile.com/s-cz/677a0s.jpg" alt="หมวก">
+            <p>หมวก</p>
+          </div>
+        </div>
+      </div>
+
+<div class="form-group">
+        <label for="productSelection">เลือกสินค้า</label>
+        <select id="productSelection" name="productSelection" required>
+          <option value="">-- กรุณาเลือกสินค้า --</option>
+          <option value="shirt">เสื้อ</option>
+          <option value="bag">กระเป๋า</option>
+          <option value="cup">แก้ว</option>
+          <option value="hat">หมวก</option>
+          <option value="umbrella">ร่ม</option>
+          <option value="pin">เข็มกลัด</option>
+          <option value="notebook">สมุด</option>
+          <option value="pen">ปากกา</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="productColor">เลือกสี</label>
+        <select id="productColor" name="productColor" required>
+          <option value="">-- กรุณาเลือกสี --</option>
+          <option value="black">ดำ</option>
+          <option value="white">ขาว</option>
+          <option value="red">แดง</option>
+          <option value="blue">น้ำเงิน</option>
+          <option value="green">เขียว</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="productQuantity">จำนวน</label>
+        <input type="number" id="productQuantity" name="productQuantity" min="1" value="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="slipImage">อัปโหลดสลิปการชำระเงิน</label>
+        <input type="file" id="slipImage" name="slipImage" accept="image/*" required>
+      </div>
+
+      <div class="form-group">
+        <label for="purchaseDate">วันที่ซื้อ</label>
+        <input type="date" id="purchaseDate" name="purchaseDate" required>
+      </div>
+
+      <div class="form-group">
+        <label for="deliveryOption">ตัวเลือกการจัดส่ง</label>
+        <select id="deliveryOption" name="deliveryOption" required>
+          <option value="delivery">จัดส่ง</option>
+          <option value="selfPickup">รับด้วยตนเอง</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="paymentMethod">วิธีการชำระเงิน</label>
+        <select id="paymentMethod" name="paymentMethod" required>
+          <option value="creditCard">บัตรเครดิต</option>
+          <option value="bankTransfer">โอนเงินผ่านธนาคาร</option>
+          <option value="cashOnDelivery">เก็บเงินปลายทาง</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn">ยืนยันการสั่งซื้อ</button>
+    </form>
+  </div>
+
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // แสดงป๊อปอัป SweetAlert
+      Swal.fire({
+        title: 'สั่งซื้อสำเร็จ!',
+        text: 'ขอบคุณสำหรับการสั่งซื้อของที่ระลึก 30 ปี 🎉',
+        icon: 'success',
+        confirmButtonText: 'ตกลง'
+      });
+
+      this.reset(); // รีเซ็ตฟอร์ม
+    });
+  </script>
+
+</body>
+</html>

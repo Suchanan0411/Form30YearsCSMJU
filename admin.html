@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>จัดการสินค้า 30 ปี วิทยาการคอมพิวเตอร์</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.cs.mju.ac.th/assets/logo.aa2240c2.png" alt="CS MJU Logo" class="logo">
+        <h1>จัดการ Stock สินค้า 30 ปี วิทยาการคอมพิวเตอร์</h1>
+
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="productType">ประเภทสินค้า</label>
+                <select id="productType" name="productType">
+                    <option value="shirt">เสื้อ</option>
+                    <option value="bag">กระเป๋า</option>
+                    <option value="cup">แก้ว</option>
+                    <option value="hat">หมวก</option>
+                    <option value="umbrella">ร่ม</option>
+                    <option value="pin">เข็มกลัด</option>
+                    <option value="notebook">สมุด</option>
+                    <option value="pen">ปากกา</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="color">สี (สำหรับเสื้อ/หมวก/ร่ม)</label>
+                <input type="text" id="color" name="color" placeholder="เช่น ขาว, น้ำเงิน">
+            </div>
+            <div class="form-group">
+                <label for="size">ขนาด (สำหรับเสื้อ)</label>
+                <input type="text" id="size" name="size" placeholder="เช่น S, M, L, XL">
+            </div>
+            <div class="form-group">
+                <label for="image">รูปภาพสินค้า</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+            <div class="form-group">
+                <label for="price">ราคา (บาท)</label>
+                <input type="number" id="price" name="price" min="0" step="1">
+            </div>
+            <div class="form-group">
+                <label for="stock">จำนวนใน Stock</label>
+                <input type="number" id="stock" name="stock" min="0" step="1">
+            </div>
+            <button type="submit" class="btn">บันทึกสินค้า</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById("orderForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            Swal.fire({
+                title: 'บันทึกสำเร็จ!',
+                text: 'ข้อมูลสินค้าได้ถูกบันทึกเรียบร้อยแล้ว 🎉',
+                icon: 'success',
+                confirmButtonText: 'ตกลง'
+            });
+            this.reset();
+        });
+    </script>
+</body>
+</html>
